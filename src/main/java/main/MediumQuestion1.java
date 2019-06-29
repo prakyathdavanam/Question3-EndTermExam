@@ -31,7 +31,7 @@ class SeniorCitizenCustomer extends Customer {
 	}
 	
 	Double getBillAmount(Double amount) {
-		Double bill =null; //edit as per the question
+		Double bill =amount-(amount*0.12); //edit as per the question
 		//Write your code here of required
 		return bill;
 	}
@@ -43,7 +43,7 @@ class PrivilegeCustomer extends Customer {
 			super(name, address, age, mobile);
 		}
 		Double getBillAmount(Double amount) {
-			Double bill = null; //edit as per the Question 
+			Double bill = amount-(amount*0.30); //edit as per the Question 
 			//write your code here if required.
 			return bill;
 		}
@@ -65,7 +65,7 @@ public class MediumQuestion1 {
 				takeInput();
 				
 				Customer cust = new PrivilegeCustomer(name, address, age, phn);
-				//Double billAmt = cust.getBillAmount(purchasedAmt);
+				Double billAmt = cust.getBillAmount(purchasedAmt);
 				System.out.println("Bill details");
 				System.out.println(cust.toString()+"\n"+cust.getBillAmount(purchasedAmt));
 				break;
